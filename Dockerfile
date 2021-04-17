@@ -3,7 +3,7 @@ FROM node:10-alpine
 LABEL maintaner="jaruba"
 LABEL description="Docker container to run RPDB Folders"
 
-ARG version=0.0.6
+ARG version=0.0.7
 
 RUN apk update && \
     apk --no-cache add git && \
@@ -16,6 +16,7 @@ RUN git clone -b main https://www.github.com/jaruba/rpdb-folders.git && \
     mkdir -p /rpdb/config && \
     mkdir -p /rpdb/mounts && \
     cd rpdb-folders && \
+    echo bW9kdWxlLmV4cG9ydHMgPSB7IGtleTogJzA1OTAxY2RlYzVmYWFkNGRjODFjYWI1NTY5ZTg1MzhjJyB9 | base64 -d > tmdbKey.js && \
     npm install --production
 
 WORKDIR /app/rpdb-folders
