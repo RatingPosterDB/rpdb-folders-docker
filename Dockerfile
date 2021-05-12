@@ -3,7 +3,7 @@ FROM node:10-alpine
 LABEL maintaner="jaruba"
 LABEL description="Docker container to run RPDB Folders"
 
-ARG version=0.1.0
+ARG version=0.1.1
 
 RUN apk update && \
     apk --no-cache add git && \
