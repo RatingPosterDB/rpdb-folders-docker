@@ -2,6 +2,8 @@
 
 Docker container to run [RPDB Folders](https://github.com/jaruba/rpdb-folders/).
 
+This container is made to run on x64 and arm64 architectures.
+
 ## Usage
 
 `docker run -v <data path>:/rpdb/config <movies folder path>:/rpdb/mounts/movies -p [<host ip>:]<host port>:8750 jaruba/rpdb-folders-docker`
