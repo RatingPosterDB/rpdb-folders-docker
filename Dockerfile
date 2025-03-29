@@ -3,7 +3,7 @@ FROM debian:bullseye-slim
 LABEL maintaner="jaruba"
 LABEL description="Docker container to run RPDB Folders"
 
-ARG version=0.3.1
+ARG version=0.3.2
 
 RUN apt-get update && \
     apt-get install -y unzip && \
