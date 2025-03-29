@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-LABEL maintaner="jaruba"
+LABEL maintainer="jaruba"
 LABEL description="Docker container to run RPDB Folders"
 
 ARG version=0.3.2
