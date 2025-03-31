@@ -6,7 +6,7 @@ This container is made to run on x64 and arm64 architectures.
 
 ## Usage
 
-`docker run -v <data path>:/rpdb/config <movies folder path>:/rpdb/mounts/movies -p [<host ip>:]<host port>:8750 jaruba/rpdb-folders-docker`
+`docker run --stop-timeout 10 -v <data path>:/rpdb/config <movies folder path>:/rpdb/mounts/movies -p [<host ip>:]<host port>:8750 jaruba/rpdb-folders-docker`
 
 You can add as many movies / series folders to `/rpdb/mounts` as you need. These folders then become available in the RPDB Folders UI in order to scan them and add [RPDB](https://ratingposterdb.com/) Posters / Backgrounds to them automatically.
 
@@ -23,6 +23,7 @@ services:
     container_name: rpdb-folders
     image: jaruba/rpdb-folders-docker:latest
     restart: unless-stopped
+    stop_grace_period: 10s
     ports:
       - 8750:8750
     volumes:
